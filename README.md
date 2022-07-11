@@ -8,6 +8,7 @@ The app provides backend support for Student Registration. It provides the follo
     * **addStudent**
     * **addCourse** 
     * **addTeacher**  
+    
     *NOTE: add the course prior to adding a teacher since a teacher needs to be assigned a course while being registered.*
 
 * Students can:
