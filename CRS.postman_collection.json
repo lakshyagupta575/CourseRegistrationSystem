@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "e10ebd45-2103-4a23-b37f-579d96cafc8e",
+		"name": "CRS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21901712"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "AddCourse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"IT101\",\r\n    \"name\": \"Artificial Intelligence\",\r\n    \"seats\": 10,\r\n    \"fee\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/addTeacher",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"addTeacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddTeacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"Prof1\",\r\n    \"name\": \"Colt Steele\",\r\n    \"department\": \"Information Technology\",\r\n    \"qualification\": \"PhD\",\r\n    \"courseId\": \"IT101\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/addTeacher",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"addTeacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddStudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"Stu1\",\r\n    \"name\": \"Lakshya Gupta\",\r\n    \"department\": \"Information Technology\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/addStudent",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"addStudent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "GetStudentDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/student/?userId=Stu1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								""
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "Stu1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStudentFees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/student/fee/?studentId=Stu1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"fee",
+								""
+							],
+							"query": [
+								{
+									"key": "studentId",
+									"value": "Stu1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterCourse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentId\": \"Stu1\",\r\n    \"courseId\": \"IT101\",\r\n    \"grade\": \"A+\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/student/courses",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ViewStudentCourses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/student/courses?studentId=Stu1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"courses"
+							],
+							"query": [
+								{
+									"key": "studentId",
+									"value": "Stu1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ViewGrade",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/student/grades?studentId=Stu1&courseId=IT101",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"grades"
+							],
+							"query": [
+								{
+									"key": "studentId",
+									"value": "Stu1"
+								},
+								{
+									"key": "courseId",
+									"value": "IT101"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "ViewTeacherCourses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/teacher/:teacherId/course",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teacher",
+								":teacherId",
+								"course"
+							],
+							"variable": [
+								{
+									"key": "teacherId",
+									"value": "Prof1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ViewTeacherStudents",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"IT101\",\r\n    \"name\": \"Information Technology\",\r\n    \"seats\": 10,\r\n    \"fee\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/teacher/:teacherId/course",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teacher",
+								":teacherId",
+								"course"
+							],
+							"variable": [
+								{
+									"key": "teacherId",
+									"value": "Prof1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeTeacherCourse",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"IT101\",\r\n    \"name\": \"Information Technology\",\r\n    \"seats\": 10,\r\n    \"fee\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/teacher/:teacherId/course",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teacher",
+								":teacherId",
+								"course"
+							],
+							"variable": [
+								{
+									"key": "teacherId",
+									"value": "Prof1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStudentGrade",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentId\": \"Stu1\",\r\n    \"courseId\": \"IT101\",\r\n    \"grade\": \"A+\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/teacher/:teacherId/course/:studentId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teacher",
+								":teacherId",
+								"course",
+								":studentId"
+							],
+							"variable": [
+								{
+									"key": "teacherId",
+									"value": "Prof1"
+								},
+								{
+									"key": "studentId",
+									"value": "Stu1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
