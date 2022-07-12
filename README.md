@@ -39,4 +39,4 @@ The app provides backend support for Student Registration. It provides the follo
 
 ## How to use the App?
 
-* Download Postman and hit desired the APIs!
+* Download Postman and hit the desired APIs!
